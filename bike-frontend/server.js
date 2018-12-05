@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes proxy to point to spring boot server
-app.use('/server', proxy('http://localhost:8080'));
+app.use('/server', proxy('https://bikeregbackend.herokuapp.com/'));
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
@@ -28,8 +28,12 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
- const port = '4200';
-app.set('port', port);
+//  const port = '4200';
+// app.set('port', port);
+
+// Start the app by listening on the default
+// Heroku port
+app.listen(process.env.PORT || 8080);
 
 /**
  * Create HTTP server.
