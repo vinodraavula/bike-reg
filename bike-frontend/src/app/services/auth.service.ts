@@ -7,11 +7,11 @@ import * as auth0 from 'auth0-js';
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: 'zzWvMdZJGD4ZpmMyJ8F7E1Ndv6zg3E7R',
+    clientID: 'p9OMt5wBowC2WfF6cZKmlNlJMgi39KHW',
     domain: 'dometto.au.auth0.com',
     responseType: 'token id_token',
-    audience: 'http://localhost:8080',
-    redirectUri: 'http://localhost:4200/callback',
+    audience: 'https://registermybike.herokuapp.com',
+    redirectUri: 'https://registermybike.herokuapp.com/callback',
     scope: 'openid view:registration view:registrations'
   });
 
