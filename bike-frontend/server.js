@@ -33,7 +33,7 @@ app.get('*', (req, res) => {
 
 // Start the app by listening on the default
 // Heroku port
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 4200);
 
 /**
  * Create HTTP server.
@@ -43,4 +43,5 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+const port = '8080';
 server.listen(port, () => console.log(`API running on ${port}`));
